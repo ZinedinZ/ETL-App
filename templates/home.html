@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <title>Home</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='excel2.png') }}");
+        }
+    </style>
 </head>
 <body>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -20,9 +24,14 @@
   }
 </style>
 <h1 class="upload-title">Upload Excel File Hier ⏬</h1>
-<div class="text-center">
-    <button type="button" class="btn btn-primary btn-lg" >Upload</button>
+
+<div class="text-center" style="padding-top: 50px">
+    <form method="POST" action="/" enctype="multipart/form-data">
+        <input class="btn btn-dark" type="file" name="file" id="file">
+    <button type="sumbit" class="btn btn-primary btn-lg" >Save</button>
+        </form>
 </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
