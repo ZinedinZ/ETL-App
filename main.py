@@ -17,12 +17,13 @@ def upload_file():
 
 
 def check_file(file_name):
+    file_type = [".xlml", ".xlsx", ".xls", ".xlsb", ".xlsm"]
     file_ext = os.path.splitext(file_name.filename)[1].lower()
-    if file_ext == ".xlml":
+    if file_ext in file_type:
         file_name.save("static/" + file_name.filename)
         print("File saved")
     else:
-        flash("wrong file type")
+        flash("Wrong File Type.")
     print(file_ext)
 
 if __name__ == "__main__":
