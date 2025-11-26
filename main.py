@@ -1,9 +1,12 @@
 from flask import Flask, render_template, request, flash
 from werkzeug.utils import secure_filename
 import os
+from etl import Etl
 
 app = Flask(__name__)
 app.secret_key = "python"
+etl = Etl()
+etl.extract_file("static/etl_test_data.xlsx")
 
 
 @app.route("/", methods=["POST", "GET"])
