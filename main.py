@@ -6,7 +6,9 @@ from etl import Etl
 app = Flask(__name__)
 app.secret_key = "python"
 etl = Etl()
-etl.extract_file("static/etl_test_data.xlsx")
+df = etl.extract_file("static/etl_test_data.xlsx")
+etl.time_editor(df)
+
 
 
 @app.route("/", methods=["POST", "GET"])
