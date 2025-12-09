@@ -2,12 +2,16 @@ from flask import Flask, render_template, request, flash
 from werkzeug.utils import secure_filename
 import os
 from etl import Etl
+from database import Database
 
 app = Flask(__name__)
 app.secret_key = "python"
 etl = Etl()
 df = etl.extract_file("static/etl_test_data.xlsx")
 etl.time_editor(df)
+db = Database()
+db.connect_sql()
+db.insert_row()
 
 
 
