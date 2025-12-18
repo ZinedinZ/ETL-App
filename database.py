@@ -16,9 +16,9 @@ class Database():
         self.cur = self.conn.cursor()
 
 
-    def insert_row(self):
-        insert_query = "INSERT INTO 'ETL App DB' (Sale_date, Store_ID, Product_ID, Product, 'Quantity sold', Price, Total_revenue)"\
-                        "Values(%s, %s, %s, %s, %s, %s, %s)"
-        self.cur.execute(insert_query, ("10", "9", "8", "7", "6", "5", "4"))
+    def insert_row(self, data):
+        insert_query = 'INSERT INTO "Sales_data" ("Sale_date", "Store_ID", "Product_ID", "Product", "Quantity sold", "Price", "Total_revenue")'\
+                        'Values(%s, %s, %s, %s, %s, %s, %s)'
+        self.cur.execute(insert_query, data)
         self.conn.commit()
         self.conn.close()
